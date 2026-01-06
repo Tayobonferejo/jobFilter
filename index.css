@@ -1,0 +1,164 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 14%, 20%);
+}
+
+/* ===== MAIN LAYOUT ===== */
+main {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ===== JOB CARD ===== */
+main > div {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  gap: 20px;
+}
+
+/* Featured jobs */
+main > div:first-child,
+main > div:nth-child(2) {
+  border-left: 5px solid hsl(180, 29%, 50%);
+}
+
+/* ===== LEFT SECTION ===== */
+main > div > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Company logo */
+img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Company info */
+main > div > div:first-child > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Company name + badges */
+main > div > div:first-child > div > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+main > div > div:first-child > div > div:first-child p:first-child {
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+}
+
+/* NEW / FEATURED badges */
+main > div > div:first-child > div > div:first-child p:nth-child(2),
+main > div > div:first-child > div > div:first-child p:nth-child(3) {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+main > div > div:first-child > div > div:first-child p:nth-child(3) {
+  background-color: hsl(180, 14%, 20%);
+}
+
+/* Job title */
+main > div > div:first-child > div > div:nth-child(2) p {
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main > div > div:first-child > div > div:nth-child(2) p:hover {
+  color: hsl(180, 29%, 50%);
+}
+
+/* Job meta info */
+main > div > div:first-child > div > div:nth-child(3) {
+  display: flex;
+  gap: 15px;
+  color: hsl(180, 8%, 52%);
+  font-size: 14px;
+}
+
+/* ===== TAGS ===== */
+main > div > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+main > div > div:last-child p {
+  background-color: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+main > div > div:last-child p:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: #fff;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  main {
+    margin-top: 40px;
+  }
+
+  main > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  img {
+    margin-top: -50px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  main > div > div:last-child {
+    border-top: 1px solid hsl(180, 8%, 85%);
+    padding-top: 15px;
+    width: 100%;
+  }
+}
+
+/* ===== ATTRIBUTION ===== */
+.attribution {
+  text-align: center;
+  font-size: 13px;
+  margin: 40px 0;
+}
+
+.attribution a {
+  color: hsl(180, 29%, 50%);
+}
