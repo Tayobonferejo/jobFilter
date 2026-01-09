@@ -127,6 +127,12 @@ main > div > div:last-child p:hover {
   color: #fff;
 }
 
+.tag.active {
+  background: #5ba4a4;
+  color: white;
+}
+
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
   main {

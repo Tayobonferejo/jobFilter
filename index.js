@@ -21,7 +21,7 @@ tags.forEach(tag => {
         languages.includes(value) ||
         tools.includes(value);
 
-        console.log(match);
+        console.log(value);
 
       card.style.display = match ? "block" : "none";
     });
