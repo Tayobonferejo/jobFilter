@@ -18,7 +18,6 @@ main {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  /* gap: 25px; */
 }
 
 /* ===== JOB CARD ===== */
@@ -172,4 +171,15 @@ img {
     padding-top: 15px;
     width: 100%;
   }
+}
+
+/* ===== ATTRIBUTION ===== */
+.attribution {
+  text-align: center;
+  font-size: 13px;
+  margin: 40px 0;
+}
+
+.attribution a {
+  color: hsl(180, 29%, 50%);
 }
