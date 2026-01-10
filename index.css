@@ -18,62 +18,68 @@ main {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  /* gap: 25px; */
 }
 
 /* ===== JOB CARD ===== */
-main > div {
+.job-card {
   background-color: #fff;
   padding: 25px;
+  margin-bottom: 20px;
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   gap: 20px;
+
+  /* animation */
+  transition: all 0.3s ease;
+  overflow: hidden;
+  max-height: 500px; /* adjust as needed */
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Featured jobs */
-main > div:first-child,
-main > div:nth-child(2) {
+.job-card:first-child,
+.job-card:nth-child(2) {
   border-left: 5px solid hsl(180, 29%, 50%);
 }
 
 /* ===== LEFT SECTION ===== */
-main > div > div:first-child {
+.job-card > div:first-child {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Company logo */
 img {
   width: 50px;
   height: 50px;
 }
 
 /* Company info */
-main > div > div:first-child > div {
+.job-card > div:first-child > div {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 /* Company name + badges */
-main > div > div:first-child > div > div:first-child {
+.job-card > div:first-child > div > div:first-child {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-main > div > div:first-child > div > div:first-child p:first-child {
+.job-card > div:first-child > div > div:first-child p:first-child {
   color: hsl(180, 29%, 50%);
   font-weight: 700;
 }
 
-/* NEW / FEATURED badges */
-main > div > div:first-child > div > div:first-child p:nth-child(2),
-main > div > div:first-child > div > div:first-child p:nth-child(3) {
+.job-card > div:first-child > div > div:first-child p:nth-child(2),
+.job-card > div:first-child > div > div:first-child p:nth-child(3) {
   background-color: hsl(180, 29%, 50%);
   color: white;
   padding: 5px 8px;
@@ -82,23 +88,23 @@ main > div > div:first-child > div > div:first-child p:nth-child(3) {
   text-transform: uppercase;
 }
 
-main > div > div:first-child > div > div:first-child p:nth-child(3) {
+.job-card > div:first-child > div > div:first-child p:nth-child(3) {
   background-color: hsl(180, 14%, 20%);
 }
 
 /* Job title */
-main > div > div:first-child > div > div:nth-child(2) p {
+.job-card > div:first-child > div > div:nth-child(2) p {
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
 }
 
-main > div > div:first-child > div > div:nth-child(2) p:hover {
+.job-card > div:first-child > div > div:nth-child(2) p:hover {
   color: hsl(180, 29%, 50%);
 }
 
 /* Job meta info */
-main > div > div:first-child > div > div:nth-child(3) {
+.job-card > div:first-child > div > div:nth-child(3) {
   display: flex;
   gap: 15px;
   color: hsl(180, 8%, 52%);
@@ -106,13 +112,13 @@ main > div > div:first-child > div > div:nth-child(3) {
 }
 
 /* ===== TAGS ===== */
-main > div > div:last-child {
+.job-card > div:last-child {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-main > div > div:last-child p {
+.job-card > div:last-child p {
   background-color: hsl(180, 52%, 96%);
   color: hsl(180, 29%, 50%);
   padding: 8px 10px;
@@ -122,16 +128,26 @@ main > div > div:last-child p {
   cursor: pointer;
 }
 
-main > div > div:last-child p:hover {
+.job-card > div:last-child p:hover {
   background-color: hsl(180, 29%, 50%);
   color: #fff;
 }
 
 .tag.active {
-  background: #5ba4a4;
+  background-color: black;
   color: white;
 }
 
+/* ===== HIDE CARDS (animated) ===== */
+.job-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  max-height: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+}
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
@@ -139,7 +155,7 @@ main > div > div:last-child p:hover {
     margin-top: 40px;
   }
 
-  main > div {
+  .job-card {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -151,20 +167,9 @@ main > div > div:last-child p:hover {
     border-radius: 50%;
   }
 
-  main > div > div:last-child {
+  .job-card > div:last-child {
     border-top: 1px solid hsl(180, 8%, 85%);
     padding-top: 15px;
     width: 100%;
   }
-}
-
-/* ===== ATTRIBUTION ===== */
-.attribution {
-  text-align: center;
-  font-size: 13px;
-  margin: 40px 0;
-}
-
-.attribution a {
-  color: hsl(180, 29%, 50%);
 }
