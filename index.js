@@ -1,5 +1,6 @@
 const tags = document.querySelectorAll(".tag");
 const cards = document.querySelectorAll(".job-card");
+const filterBar = document.getElementById("filter");
 
 // Initialize filters
 const activeFilters = {
@@ -22,8 +23,10 @@ tags.forEach(tag => {
     }
 
     filterCards();
+    updateFilterBar();
   });
 });
+
 
 function filterCards() {
   cards.forEach(card => {
@@ -46,6 +49,44 @@ function filterCards() {
     }
   });
 }
+
+
+function updateFilterBar() {
+  filterBar.innerHTML = "";
+
+  Object.entries(activeFilters).forEach(([type, values]) => {
+    values.forEach(value => {
+      const pill = document.createElement("div");
+      pill.className = "filter-pill";
+
+      pill.innerHTML = `
+        <span>${value}</span>
+        <button data-type="${type}" data-value="${value}">✕</button>
+      `;
+
+      filterBar.appendChild(pill);
+    });
+  });
+}
+
+filterBar.addEventListener("click", e => {
+  if (!e.target.matches("button")) return;
+
+  const { type, value } = e.target.dataset;
+
+  // Remove from filter state
+  activeFilters[type].delete(value);
+
+  // Remove active class from matching tag
+  tags.forEach(tag => {
+    if (tag.textContent.toLowerCase() === value) {
+      tag.classList.remove("active");
+    }
+  });
+
+  updateFilterBar();
+  filterCards();
+});
 
 
 

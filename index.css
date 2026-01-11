@@ -148,6 +148,40 @@ img {
   pointer-events: none;
 }
 
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter-pill {
+  display: flex;
+  align-items: center;
+  background: hsl(180, 52%, 96%);
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.filter-pill span {
+  padding: 8px 10px;
+}
+
+.filter-pill button {
+  border: none;
+  background: hsl(180, 29%, 50%);
+  color: white;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.filter-pill button:hover {
+  background: hsl(180, 14%, 20%);
+}
+
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
   main {
