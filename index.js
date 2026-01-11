@@ -90,12 +90,12 @@ filterBar.addEventListener("click", e => {
 
 
 
-resetBtn.addEventListener("click", () => {
-  activeRoles.clear();
-  activeLevel = null;
+// resetBtn.addEventListener("click", () => {
+//   activeRoles.clear();
+//   activeLevel = null;
 
-  tags.forEach(tag => tag.classList.remove("active"));
-  cards.forEach(card => card.classList.remove("hide"));
+//   tags.forEach(tag => tag.classList.remove("active"));
+//   cards.forEach(card => card.classList.remove("hide"));
 
-  filterCards();
-});
+//   filterCards();
+// });
